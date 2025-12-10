@@ -301,6 +301,24 @@
       margin-top: 10px;
     }
 
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .photo-item {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .photo-item img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d4d4d8;
+      display: block;
+      margin-bottom: 4px;
+    }
+
     @media(max-width: 640px) {
       header h1 { font-size: 24px; }
       .card { padding: 14px 12px; }
@@ -312,6 +330,7 @@
 <div class="page">
   <header>
     <h1>地球物理期末作品集 · Interactive</h1>
+    <p class="tagline">四份沒有直接關聯、但都很地球物理的作業，被整理成一個可以玩的網頁。</p>
     <p>
       內容依序包含：我的<strong>第一份作業</strong> Geophysics Playground（教具風地球物理概論）、<br>
       一份重力異常魔法作業、一份校園淺層震測實驗，以及最後的 PyGMT + Scotia Plate 構造圖。
@@ -505,6 +524,29 @@
       </div>
     </div>
 
+    <!-- 新增：震測實驗照片 -->
+    <div class="card">
+      <h3>📸 震測實驗花絮</h3>
+      <div class="photo-grid">
+        <div class="photo-item">
+          <img src="seismic_tools.jpg" alt="Seismic tools and cables" />
+          實驗開始前的裝備大合照：地震儀主機、長長的訊號線、鐵鎚、鐵板等工具。
+        </div>
+        <div class="photo-item">
+          <img src="seismic_setup.jpg" alt="Setting up geophones" />
+          架設 geophone 與量距離：確定每一支地震儀的間距與位置。
+        </div>
+        <div class="photo-item">
+          <img src="seismic_traveltime.jpg" alt="Picking travel times" />
+          夥伴在走時圖上標出各個到時點，從斜率算出地層波速與厚度。
+        </div>
+        <div class="photo-item">
+          <img src="seismic_hammer.jpg" alt="Hammering the source plate" />
+          實際敲擊震源板製造「小地震」的瞬間：真的有種在自己做實驗的感覺。
+        </div>
+      </div>
+    </div>
+
     <div class="card">
       <h3>📏 厚度估算小工具<span class="badge">互動</span></h3>
       <p style="font-size:13px;color:var(--text-muted);">
@@ -568,10 +610,20 @@
       </div>
     </div>
 
+    <!-- 新增：台灣 PyGMT 地形圖 -->
+    <div class="card">
+      <h3>🗺️ PyGMT 台灣地形圖</h3>
+      <p style="font-size:13px;color:var(--text-muted);">
+        這張是我用 PyGMT 繪出的台灣地形與周邊海底地形圖，雖然不是本次四份作業之一，
+        但我覺得顏色與細節都很漂亮，所以也放進期末作品集裡當小展示。
+      </p>
+      <img src="taiwan_map.png" alt="Taiwan topography map" class="preview" />
+    </div>
+
     <div class="card">
       <h3>🌋 Scotia Plate 圖像預覽</h3>
       <p style="font-size:13px;color:var(--text-muted);">
-        請將你的圖片檔命名為 <code>scotia_plate_map.png</code> 並放在與本 HTML 同一資料夾；
+        請將你的 Scotia Plate 圖片檔命名為 <code>scotia_plate_map.png</code> 並放在與本 HTML 同一資料夾；
         或者將下方 <code>src</code> 改成實際檔名。
       </p>
       <img src="scotia_plate_map.png" alt="Scotia Plate map" class="preview" />
