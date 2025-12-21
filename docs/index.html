@@ -9,10 +9,11 @@
     .container { max-width: 1000px; margin: auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     h1 { text-align: center; margin-bottom: 0.5em; }
     h2 { border-bottom: 2px solid #ccc; padding-bottom: 4px; margin-top: 1.6em; }
+    h3 { color: #333; }
     .section { margin-bottom: 32px; }
     .note { background: #eef; padding: 10px; border-radius: 4px; }
     .formula { background: #f0f0f0; padding: 8px; border-radius: 4px; font-family: monospace; overflow-x: auto; }
-    img { max-width: 100%; height: auto; display: block; margin: 16px 0; border: 1px solid #ccc; }
+    img { max-width: 100%; height: auto; display: block; margin: 16px 0; border: 1px solid #ccc; cursor: pointer; }
     table { border-collapse: collapse; width: 100%; margin: 16px 0; }
     th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
     th { background: #ddd; }
@@ -20,6 +21,19 @@
     .quote { font-style: italic; color: #777; }
     button { background: #ffb347; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; }
     button:hover { background: #ff9a00; }
+    .toc { list-style: none; padding: 0; margin: 0; }
+    .toc li { margin-bottom: 8px; }
+    .toc a {
+      text-decoration: none;
+      color: #ffb347;
+      font-size: 16px;
+      transition: color 0.2s ease;
+    }
+    .toc a:hover { color: #ff9a00; }
+
+    .section-content { display: none; padding: 10px 0; margin-left: 20px; }
+    .section-content p, .section-content ul { margin-top: 10px; }
+    .section-header:hover { color: #ffb347; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -27,101 +41,111 @@
     <h1>地球物理期末作品集</h1>
     <p><em>整合各份作業的重點整理，並展示我對地球物理的學習過程與收穫。</em></p>
 
-    <!-- 第一份作業 -->
+    <!-- 目錄 -->
     <div class="section">
-      <h2>📘 第一份作業：地球物理概論 Playground</h2>
-      <h3>主要內容</h3>
-      <ul>
-        <li>地球分層 — 地殼、地函、地核；解釋地函對流、地核生地磁場的重要性。</li>
-        <li>重力與大地測量 — 地球不是完美球體、利用重力異常找地下構造。</li>
-        <li>地震學與地球內部 — P 波、S 波差異，P‑S 時差用於估算震源距離並推演地核狀態。</li>
-        <li>熱流、海底年齡與電性 — 新生海洋地殼熱、遠離洋脊越老越冷，支持板塊擴張理論。</li>
-        <li>地磁與古地磁 — 岩石冷卻時記錄當時地磁，海底磁條帶提供板塊漂移證據。</li>
+      <h2>📑 目錄</h2>
+      <ul class="toc">
+        <li><a href="#作業1">📘 第一份作業：地球物理概論 Playground</a></li>
+        <li><a href="#作業2">🌐 第二份作業：Free‑Air Gravity 異常分析</a></li>
+        <li><a href="#作業3">🗺️ 第三份作業：板塊邊界地圖 (PyGMT)</a></li>
+        <li><a href="#作業4">🔨 第四份作業：校園震測實驗報告</a></li>
       </ul>
-      <h3>特色</h3>
-      <ul>
-        <li>將抽象理論轉化為易於理解的「生活例子 + 記憶口訣 + 小互動 Quiz／計算器」</li>
-        <li>每一章節都有核心概念、為什麼重要、生活連結與記憶口訣 — 適合初學者快速入門</li>
-      </ul>
+    </div>
+
+    <!-- 第一份作業 -->
+    <div class="section" id="作業1">
+      <h2 class="section-header">📘 第一份作業：地球物理概論 Playground</h2>
+      <div class="section-content">
+        <h3>主要內容</h3>
+        <ul>
+          <li>地球分層 — 地殼、地函、地核；解釋地函對流、地核生地磁場的重要性。</li>
+          <li>重力與大地測量 — 地球不是完美球體、利用重力異常找地下構造。</li>
+          <li>地震學與地球內部 — P 波、S 波差異，P‑S 時差用於估算震源距離並推演地核狀態。</li>
+          <li>熱流、海底年齡與電性 — 新生海洋地殼熱、遠離洋脊越老越冷，支持板塊擴張理論。</li>
+          <li>地磁與古地磁 — 岩石冷卻時記錄當時地磁，海底磁條帶提供板塊漂移證據。</li>
+        </ul>
+        <h3>特色</h3>
+        <ul>
+          <li>將抽象理論轉化為易於理解的「生活例子 + 記憶口訣 + 小互動 Quiz／計算器」</li>
+          <li>每一章節都有核心概念、為什麼重要、生活連結與記憶口訣 — 適合初學者快速入門</li>
+        </ul>
+      </div>
     </div>
 
     <!-- 第二份作業：Free‑Air Gravity 異常 -->
-    <div class="section">
-      <h2>🌐 第二份作業：Free‑Air Gravity 異常分析</h2>
-      <h3>理論背景與方法</h3>
-      <ul>
-        <li>進行自由空氣校正 (free‑air correction)，把測站重力還原到海平面基準面。</li>
-        <li>計算 free‑air 異常 (free‑air anomaly)，反映地下密度異常 (暗示可能的低密度區如鬆散層、沉積盆地、空洞…)。</li>
-        <li>若進一步扣除地表質量／地形影響，可做布格校正 (Bouguer correction)，得到更貼近構造密度異常的結果。</li>
-      </ul>
-      <h3>本次結果 (範例)</h3>
-      <table>
-        <tr><th>項目</th><th>數值 / 說明</th></tr>
-        <tr><td>觀測重力 g_obs</td><td>範例值 (依作業)</td></tr>
-        <tr><td>理論重力 g_t</td><td>依地理位置與緯度計算</td></tr>
-        <tr><td>自由空氣校正 (FAC)</td><td>依海拔高度計算補正值</td></tr>
-        <tr><td>free‑air 異常 Δg_FA</td><td>異常值 (正或負) → 判斷地下密度異常</td></tr>
-        <tr><td>布格校正 (若有)</td><td>扣除地表質量後異常值，較能反映地下構造</td></tr>
-      </table>
-      <h3>應用與限制</h3>
-      <ul>
-        <li>適合作為初步判讀地下構造 (盆地、低密度沉積層、空洞…) 的工具。</li>
-        <li>若地形起伏大或地形質量差異大，需做進一步布格 + 地形修正 (terrain correction) 才能提高準確性。</li>
-        <li>僅靠重力異常無法唯一判斷構造，建議搭配地震、地質、鑽探或其他資料做綜合分析。</li>
-      </ul>
+    <div class="section" id="作業2">
+      <h2 class="section-header">🌐 第二份作業：Free‑Air Gravity 異常分析</h2>
+      <div class="section-content">
+        <h3>理論背景與方法</h3>
+        <ul>
+          <li>進行自由空氣校正 (free‑air correction)，把測站重力還原到海平面基準面。</li>
+          <li>計算 free‑air 異常 (free‑air anomaly)，反映地下密度異常 (暗示可能的低密度區如鬆散層、沉積盆地、空洞…)。</li>
+          <li>若進一步扣除地表質量／地形影響，可做布格校正 (Bouguer correction)，得到更貼近構造密度異常的結果。</li>
+        </ul>
+        <h3>本次結果 (範例)</h3>
+        <table>
+          <tr><th>項目</th><th>數值 / 說明</th></tr>
+          <tr><td>觀測重力 g_obs</td><td>範例值 (依作業)</td></tr>
+          <tr><td>理論重力 g_t</td><td>依地理位置與緯度計算</td></tr>
+          <tr><td>自由空氣校正 (FAC)</td><td>依海拔高度計算補正值</td></tr>
+          <tr><td>free‑air 異常 Δg_FA</td><td>異常值 (正或負) → 判斷地下密度異常</td></tr>
+          <tr><td>布格校正 (若有)</td><td>扣除地表質量後異常值，較能反映地下構造</td></tr>
+        </table>
+        <h3>應用與限制</h3>
+        <ul>
+          <li>適合作為初步判讀地下構造 (盆地、低密度沉積層、空洞…) 的工具。</li>
+          <li>若地形起伏大或地形質量差異大，需做進一步布格 + 地形修正 (terrain correction) 才能提高準確性。</li>
+          <li>僅靠重力異常無法唯一判斷構造，建議搭配地震、地質、鑽探或其他資料做綜合分析。</li>
+        </ul>
+      </div>
     </div>
 
     <!-- 第三份作業：Plot Plate Boundary (PyGMT) -->
-    <div class="section">
-      <h2>🗺️ 第三份作業：板塊邊界地圖 (PyGMT)</h2>
-      <h3>目的與方法</h3>
-      <ul>
-        <li>使用 PyGMT（基於 GMT 的 Python 套件）繪製全球或區域板塊邊界地圖。</li>
-        <li>設定 region／projection／底圖 (coastline, land/sea, water, bathymetry...)，並把板塊邊界資料繪製為線。</li>
-        <li>產出高解析度地圖 (PNG 或 SVG)，方便用於報告、簡報、視覺化分析。</li>
-      </ul>
-      <h3>可呈現成果</h3>
-      <ul>
-        <li>全球板塊邊界分布圖 — 便於辨識主要板塊與構造帶 (如中洋脊、俯衝帶、斷層帶…)。</li>
-        <li>若針對特定區域，亦可製作區域／局部放大圖，更清楚對應地質背景、地震或火山分布。</li>
-      </ul>
-      <h3>潛在用途</h3>
-      <ul>
-        <li>做為後續地震、板塊運動、構造演化研究的背景地圖。</li>
-        <li>視覺化成果方便整合到報告／簡報／論文中。</li>
-      </ul>
+    <div class="section" id="作業3">
+      <h2 class="section-header">🗺️ 第三份作業：板塊邊界地圖 (PyGMT)</h2>
+      <div class="section-content">
+        <h3>目的與方法</h3>
+        <ul>
+          <li>使用 PyGMT（基於 GMT 的 Python 套件）繪製全球或區域板塊邊界地圖。</li>
+          <li>設定 region／projection／底圖 (coastline, land/sea, water, bathymetry...)，並把板塊邊界資料繪製為線。</li>
+          <li>產出高解析度地圖 (PNG 或 SVG)，方便用於報告、簡報、視覺化分析。</li>
+        </ul>
+        <h3>可呈現成果</h3>
+        <ul>
+          <li>全球板塊邊界分布圖 — 便於辨識主要板塊與構造帶 (如中洋脊、俯衝帶、斷層帶…)。</li>
+          <li>若針對特定區域，亦可製作區域／局部放大圖，更清楚對應地質背景、地震或火山分布。</li>
+        </ul>
+        <h3>潛在用途</h3>
+        <ul>
+          <li>做為後續地震、板塊運動、構造演化研究的背景地圖。</li>
+          <li>視覺化成果方便整合到報告／簡報／論文中。</li>
+        </ul>
+      </div>
     </div>
 
     <!-- 第四份作業：校園震測實驗報告 -->
-    <div class="section">
-      <h2>🔨 第四份作業：校園震測實驗報告</h2>
-      <h3>實驗內容</h3>
-      <ul>
-        <li>在校園 (黑森林 → 圖書館後方) 架設 24 支地震儀 (geophone)，進行淺層地震勘測 (敲擊鐵板產生震源)。</li>
-        <li>收集直達波 (直接從地表傳遞) 與折射波 (經地下介面折射再傳回地表) 的走時資料 (travel‑time)。</li>
-        <li>利用臨界折射 (critical refraction) 理論 + 走時圖分析，推估地下分層與地層厚度 (淺層結構)。</li>
-      </ul>
-      <h3>資料處理與結果</h3>
-      <ul>
-        <li>從走時圖中判斷直達波與折射波的斜率 → 得到各層波速。</li>
-        <li>利用速度與到時差估算淺層厚度 (平均值)，作為該校園地區近地表結構的初步推估。</li>
-        <li>結果顯示地表上層為鬆散層 (速度低)、下層為較緻密地層 (速度高)、厚度為數公尺等級 (取決於你實際量測與計算)。</li>
-      </ul>
-      <h3>學習與反思</h3>
-      <ul>
-        <li>從教室理論走到校園實作：親手架儀器、量測、分析、報告 — 對地球物理有更實感的理解。</li>
-        <li>資料處理中發現：震測不只是公式、也涉及到現場操作品質 (震源、訊號品質、雜訊…)。真正的地球物理研究，不只是推理，更是工程與判讀。</li>
-        <li>這次經驗對後續更深的地震、構造或地質研究很有幫助，也為期末報告建立實作基礎。</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>🎯 總結</h2>
-      <p>
-        這四份作業涵蓋了從基礎理論 (地球分層、重力、地震、地磁)、到自由空氣重力異常分析、再到視覺化 (板塊邊界地圖)、以及實際 field 實驗 (校園震測)。<br>
-        把這些內容整合在一起，不只是展示「我會寫程式／會畫圖／會量測／會分析」，也是我對「地球是什麼樣子」——從內部結構到表層構造——的一次全面探索。<br>
-        未來若搭配更多資料 (地震、鑽探、地質、磁力…)，甚至用這些基礎當起點進行更深入研究，也會更有說服力。
-      </p>
+    <div class="section" id="作業4">
+      <h2 class="section-header">🔨 第四份作業：校園震測實驗報告</h2>
+      <div class="section-content">
+        <h3>實驗內容</h3>
+        <ul>
+          <li>在校園 (黑森林 → 圖書館後方) 架設 24 支地震儀 (geophone)，進行淺層地震勘測 (敲擊鐵板產生震源)。</li>
+          <li>收集直達波 (直接從地表傳遞) 與折射波 (經地下介面折射再傳回地表) 的走時資料 (travel‑time)。</li>
+          <li>利用臨界折射 (critical refraction) 理論 + 走時圖分析，推估地下分層與地層厚度 (淺層結構)。</li>
+        </ul>
+        <h3>資料處理與結果</h3>
+        <ul>
+          <li>從走時圖中判斷直達波與折射波的斜率 → 得到各層波速。</li>
+          <li>利用速度與到時差估算淺層厚度 (平均值)，作為該校園地區近地表結構的初步推估。</li>
+          <li>結果顯示地表上層為鬆散層 (速度低)、下層為較緻密地層 (速度高)、厚度為數公尺等級 (取決於你實際量測與計算)。</li>
+        </ul>
+        <h3>學習與反思</h3>
+        <ul>
+          <li>從教室理論走到校園實作：親手架儀器、量測、分析、報告 — 對地球物理有更實感的理解。</li>
+          <li>資料處理中發現：震測不只是公式、也涉及到現場操作品質 (震源、訊號品質、雜訊…)。真正的地球物理研究，不只是推理，更是工程與判讀。</li>
+          <li>這次經驗對後續更深的地震、構造或地質研究很有幫助，也為期末報告建立實作基礎。</li>
+        </ul>
+      </div>
     </div>
 
     <!-- 插入圖片 -->
@@ -150,5 +174,28 @@
       </p>
     </div>
   </div>
+
+  <script>
+    // 使圖片可點擊放大
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('click', function() {
+        window.open(img.src, '_blank');
+      });
+    });
+
+    // 讓作業區塊可以折疊/展開
+    const sections = document.querySelectorAll('.section-header');
+    sections.forEach(section => {
+      section.addEventListener('click', function() {
+        const content = section.nextElementSibling;
+        if (content.style.display === "none" || !content.style.display) {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
