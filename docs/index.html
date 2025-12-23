@@ -5,22 +5,23 @@
   <title>地球物理期末作品集</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { background: #f4f4f4; font-family: sans-serif; line-height: 1.6; padding: 20px; }
-    .container { max-width: 1000px; margin: auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h1 { text-align: center; margin-bottom: 0.5em; }
-    h2 { border-bottom: 2px solid #ccc; padding-bottom: 4px; margin-top: 1.6em; }
-    h3 { color: #333; }
+    body { background: #1a2634; font-family: sans-serif; line-height: 1.6; padding: 20px; color: #f4f4f5; }
+    .container { max-width: 1000px; margin: auto; background: #1e3544; padding: 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 0.5em; color: #ffb347; }
+    h2 { border-bottom: 2px solid #ccc; padding-bottom: 4px; margin-top: 1.6em; color: #ffb347; }
+    h3 { color: #f4f4f5; }
     .section { margin-bottom: 32px; }
-    .note { background: #eef; padding: 10px; border-radius: 4px; }
-    .formula { background: #f0f0f0; padding: 8px; border-radius: 4px; font-family: monospace; overflow-x: auto; }
+    .note { background: #2c3e50; padding: 10px; border-radius: 4px; color: #bdc3c7; }
+    .formula { background: #34495e; padding: 8px; border-radius: 4px; font-family: monospace; overflow-x: auto; color: #bdc3c7; }
     img { max-width: 100%; height: auto; display: block; margin: 16px 0; border: 1px solid #ccc; cursor: pointer; }
     table { border-collapse: collapse; width: 100%; margin: 16px 0; }
     th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
-    th { background: #ddd; }
+    th { background: #2c3e50; color: #f4f4f5; }
     ul { margin-left: 20px; }
-    .quote { font-style: italic; color: #777; }
-    button { background: #ffb347; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .quote { font-style: italic; color: #bdc3c7; }
+    button { background: #ffb347; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; color: #111827; }
     button:hover { background: #ff9a00; }
+
     .toc { list-style: none; padding: 0; margin: 0; }
     .toc li { margin-bottom: 8px; }
     .toc a {
@@ -33,6 +34,26 @@
 
     .section-content { display: none; padding: 10px 0; margin-left: 20px; }
     .section-header:hover { color: #ffb347; cursor: pointer; }
+
+    /* 按鈕區 */
+    .interactive-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .interactive-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4fd1c5;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .interactive-buttons button:hover {
+      background-color: #38b2ac;
+    }
   </style>
 </head>
 <body>
@@ -68,6 +89,10 @@
           <li>將抽象理論轉化為易於理解的「生活例子 + 記憶口訣 + 小互動 Quiz／計算器」</li>
           <li>每一章節都有核心概念、為什麼重要、生活連結與記憶口訣 — 適合初學者快速入門</li>
         </ul>
+        <div class="interactive-buttons">
+          <button onclick="alert('這是第一份作業的詳細介紹，了解地球物理概論！')">查看更多作業內容</button>
+          <button onclick="window.open('第一份作業的相關資料URL')">查詢更多資料</button>
+        </div>
       </div>
     </div>
 
@@ -96,6 +121,10 @@
           <li>若地形起伏大或地形質量差異大，需做進一步布格 + 地形修正 (terrain correction) 才能提高準確性。</li>
           <li>僅靠重力異常無法唯一判斷構造，建議搭配地震、地質、鑽探或其他資料做綜合分析。</li>
         </ul>
+        <div class="interactive-buttons">
+          <button onclick="alert('這是自由空氣異常的詳細介紹！')">查看更多作業內容</button>
+          <button onclick="window.open('第二份作業的相關資料URL')">查詢更多資料</button>
+        </div>
       </div>
     </div>
 
@@ -119,6 +148,10 @@
           <li>做為後續地震、板塊運動、構造演化研究的背景地圖。</li>
           <li>視覺化成果方便整合到報告／簡報／論文中。</li>
         </ul>
+        <div class="interactive-buttons">
+          <button onclick="alert('這是板塊邊界的詳細介紹！')">查看更多作業內容</button>
+          <button onclick="window.open('第三份作業的相關資料URL')">查詢更多資料</button>
+        </div>
       </div>
     </div>
 
@@ -144,6 +177,10 @@
           <li>資料處理中發現：震測不只是公式、也涉及到現場操作品質 (震源、訊號品質、雜訊…)。真正的地球物理研究，不只是推理，更是工程與判讀。</li>
           <li>這次經驗對後續更深的地震、構造或地質研究很有幫助，也為期末報告建立實作基礎。</li>
         </ul>
+        <div class="interactive-buttons">
+          <button onclick="alert('這是震測實驗的詳細介紹！')">查看更多作業內容</button>
+          <button onclick="window.open('第四份作業的相關資料URL')">查詢更多資料</button>
+        </div>
       </div>
     </div>
 
@@ -151,19 +188,19 @@
     <div class="section">
       <h2>📷 實驗過程與圖片</h2>
       <h3>斯科舍板塊與相鄰板塊圖</h3>
-      <img src="scotia_plate_map.png" alt="斯科舍板塊圖">
+      <img src="scotia_plate_map.png" alt="斯科舍板塊與相鄰板塊">
 
       <h3>震測實驗工具</h3>
-      <img src="seismic_tools.jpg" alt="震測實驗工具">
+      <img src="seismic_tools.png" alt="震測實驗工具">
 
       <h3>架設地震儀</h3>
-      <img src="seismic_setup.jpg" alt="架設地震儀">
+      <img src="seismic_setup.png" alt="架設地震儀">
 
       <h3>計算走時曲線</h3>
-      <img src="seismic_traveltime.jpg" alt="計算走時曲線">
+      <img src="seismic_traveltime.png" alt="計算走時曲線">
 
       <h3>敲打地震儀</h3>
-      <img src="seismic_hammer.jpg" alt="敲打地震儀">
+      <img src="seismic_hammer.png" alt="敲打地震儀">
     </div>
 
     <div class="section">
